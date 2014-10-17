@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2048</title>
+        <meta charset="UTF-8" />
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div id="container"></div>
+        <div class="controls">
+            <h1 class="button reset-4">4 x 4</h1>
+            <h1 class="button reset-6">6 x 6</h1>
+            <div class="sub-controls">
+                <h2 class="button shape inactive" data-shape="board">board</h2>
+                <h2 class="button shape inactive" data-shape="cone">cone</h2>
+                <h2 class="button shape inactive" data-shape="random">chaos</h2>
+                <h2 class="button more-control">more</h2>
+            </div>
+        </div>
+        <div class="info">
+            <h1>2048 is played with direction keys <span class="close">[x]</span></h1>
+        </div>
+        <div class="more">
+            <h1>Within Console</h1>
+            <h2>Reset game with a N x N board:</h2>
+            <h3>game.reset(n)</h3>
+            <h2>Reset camera position:</h2>
+            <h3>game.resetCameraPosition()</h3>
+            <h2>Fill rest of the board with random pieces:</h2>
+            <h3>game.fillBoard()</h3>
+        </div>
+        <script data-main="scripts/config" src="./vendors/requirejs/require.js"></script>
+    </body>
+</html>

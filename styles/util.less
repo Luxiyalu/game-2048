@@ -1,0 +1,139 @@
+/* colors */
+/* variables */
+/* commons */
+
+/* reset */
+a{text-decoration: none;}
+ul,ol{list-style-type:none;}
+html{font-family: sans-serif;}
+img,canvas{ height:auto;display:block;border:0;}
+table{border-spacing:0;border-collapse:collapse;}
+h1,h2,h3,h4,h5,h6,p{font-weight:normal;font-style:normal;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display: block;}
+body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p{margin:0;padding:0;-webkit-tap-highlight-color: rgba(255,0,0,0);}
+
+/* form */
+fieldset{border:0;}
+label{cursor:pointer;}
+.clear_both{clear:both;}
+.clearfix{display: block;}
+* html .clearfix{height:1%;}
+input::-ms-clear{display: none;}
+.clearfix:after{height:0;display:block;clear:both;visibility:hidden;font-size:0;content:" ";}
+/*input{left:-9999px; position: absolute; outline: none;}*/
+
+/* methods */
+/*@font-face{.fontface(GothamBold);}*/
+.xfont(@fontname){ /* added font, thus added ms-filter */
+    .filter;
+    font-family: @fontname;
+}
+.fontface(@fontname) {
+    font-family: '@{fontname}';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/@{fontname}.eot');
+    src: url('../fonts/@{fontname}.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/@{fontname}.otf') format('opentype'),
+         url('../fonts/@{fontname}.ttf') format('truetype'),
+         url('../fonts/@{fontname}.woff') format('woff'),
+         url('../fonts/@{fontname}.svg') format('svg');
+}
+.filter{
+    filter: ~"progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/hIEfix.png,sizingMethod=crop)";
+    -ms-filter: ~"'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/hIEfix.png,sizingMethod=crop)'";
+}
+.imgload(@fileName){
+    background-image: url("../img/@{fileName}.png");
+    background-image: -webkit-image-set(url("../img/@{fileName}.png") 1x,
+        url("../img/@{fileName}-2x.png") 2x);
+}
+.s-center(@width, @height){
+    top: 50%;
+    left: 50%;
+    width: unit(@width,px);
+    height: unit(@height,px);
+    position: absolute;
+    margin: unit(-@height/2,px) 0 0 unit(-@width/2,px);
+}
+.border-radius(@radius) {
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    .pie;
+}
+.background-image(@position,@shape,@color-start,@color-stop) {
+    background-image: -webkit-radial-gradient(@position,@shape,@color-start,@color-stop);
+    background-image: -moz-radial-gradient(@position,@shape,@color-start,@color-stop);
+    background-image: -ms-radial-gradient(@position,@shape,@color-start,@color-stop);
+    background-image: radial-gradient(@position,@shape,@color-start,@color-stop);
+}
+.transform(@transform){
+    transform: @transform;
+    -o-transform: @transform;
+    -ms-transform: @transform;
+    -webkit-transform: @transform;
+}
+.transform-origin(@origin){
+    transform-origin: @origin;
+    -o-transform-origin: @origin;
+    -ms-transform-origin: @origin;
+    -webkit-transform-origin: @origin;
+}
+.translate3d() {
+    -webkit-transform: translate3d(0,0,0);
+    /*-moz-transform: translate3d(0,0,0);*/
+    /*-ms-transform: translate3d(0,0,0);*/
+    /*transform: translate3d(0,0,0);*/
+}
+.rotate(@rotate) {
+    -webkit-transform: rotate(@rotate);
+    -moz-transform: rotate(@rotate);
+    -ms-transform: rotate(@rotate);
+    transform: rotate(@rotate);
+}
+.scale(@scale) {
+    -webkit-transform: scale(@scale);
+    -moz-transform: scale(@scale);
+    -ms-transform: scale(@scale);
+    transform: scale(@scale);
+}
+.transition(@transition: 0.2s all ease-in-out) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    transition: @transition;
+}
+.box-shadow(@box-shadow) {
+    box-shadow: @box-shadow;
+    -webkit-box-shadow: @box-shadow;
+    -moz-box-shadow: @box-shadow;
+    -ms-box-shadow: @box-shadow;
+}
+.box-sizing{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.backface-visibility{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.middle-parent{
+    height: 100%;
+    font-size: 0;
+    .middle{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:before{
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+    }
+}
+.pie{
+    behavior: url(vendors/css3pie/PIE.htc);
+}
